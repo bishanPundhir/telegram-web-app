@@ -170,6 +170,7 @@ button:hover {
       </div>
       <button onclick="webviewExpand();">Expand</button>
     </div>
+
     <script type="text/javascript">
       var myCards = document.getElementById('container');
 var resultsArray = [];
@@ -251,6 +252,8 @@ var win = function () {
   if(counter === images.length) {
     clearInterval(Interval);
     text.innerHTML = "Your time was " + seconds + ":" + tens;
+
+    Telegram.WebApp.showPopup({title: 'You Win..', message: `Your time was ${seconds}:${tens}`, buttons: [{text:'OK'},{text:'Close'}]});
   } 
 }
      
